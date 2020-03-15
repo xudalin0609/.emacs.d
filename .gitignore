@@ -1,0 +1,8 @@
+# -*- mode: gitignore; -*-
+
+# elpa packages
+elpa/
+elpy/
+.python-environments/
+auto-save-list/
+snippets/
