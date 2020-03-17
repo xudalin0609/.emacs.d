@@ -15,12 +15,13 @@
 
 (when (>= emacs-major-version 24)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
   )
 
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+(defun initialize-package()
+  (unless nil  ;;package--initialized
+    (setq package-enable-at-startup nil)
+    (package-initialize)))
 
 
 ;;add whatever packages you want here
@@ -32,8 +33,10 @@
 				 counsel
 				 smartparens
 				 exec-path-from-shell
-				 popwin	 
-
+				 ;; popwin
+				 ;; python elpy
+			         elpy
+				 evil
 				 )  "Default packages")
 
 (setq package-selected-packages xudl/packages)
